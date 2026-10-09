@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEDETEC Digital · Manejo de Redes Sociales</title>
+<meta name="description" content="Nos encargamos de tus redes sociales: fotos, videos, reels, historias y publicaciones para tu negocio en Formosa.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="CEDETEC Digital">
+<meta property="og:title" content="Nos encargamos de tus redes sociales">
+<meta property="og:description" content="Fotos, videos y publicaciones para tu negocio en Formosa. Paquetes desde $65.000 por mes.">
+<meta property="og:url" content="https://cedetec-ti.github.io/redes/">
+<meta property="og:image" content="https://cedetec-ti.github.io/redes/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #EFEFED;
+    --card: #ffffff;
+    --primary: #003157;
+    --accent: #004371;
+    --soft: #dfe8f0;
+    --text: #003157;
+    --muted: rgba(0, 49, 87, 0.65);
+    --line: rgba(0, 49, 87, 0.12);
+    --ok: #1f7a4d;
+    --no: #a33a3a;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 64px 0; }
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 12px; }
+  .lead { color: var(--muted); font-size: 1.05rem; max-width: 640px; margin-bottom: 36px; }
+  .eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+
+  /* Hero */
+  .hero { background: var(--primary); color: #fff; padding: 72px 0 80px; }
+  .brand { font-weight: 800; letter-spacing: .14em; font-size: .9rem; margin-bottom: 40px; opacity: .9; }
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.4rem); max-width: 760px; margin-bottom: 18px; }
+  .hero p { font-size: 1.1rem; max-width: 600px; opacity: .85; margin-bottom: 30px; }
+  .btn {
+    display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 700;
+    text-decoration: none; font-size: 1rem; transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+  .btn-light { background: #fff; color: var(--primary); }
+  .btn-dark { background: var(--primary); color: #fff; }
+  .btn-ghost { border: 1.5px solid rgba(255,255,255,.5); color: #fff; margin-left: 10px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+  .step { background: var(--card); border-radius: var(--radius); padding: 24px; border: 1px solid var(--line); }
+  .step .n { width: 34px; height: 34px; border-radius: 50%; background: var(--primary); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 14px; }
+  .step h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .step p { color: var(--muted); font-size: .95rem; }
+
+  /* Plans */
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; align-items: stretch; }
+  .plan { background: var(--card); border-radius: var(--radius); padding: 30px 26px; border: 1px solid var(--line); display: flex; flex-direction: column; position: relative; transition: transform .25s ease, box-shadow .25s ease; }
+  .plan:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,49,87,.14); }
+  .plan.featured { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .badge { position: absolute; top: -13px; left: 26px; background: #fff; color: var(--primary); border: 1.5px solid var(--primary); font-size: .72rem; font-weight: 800; padding: 4px 12px; border-radius: 999px; letter-spacing: .06em; }
+  .plan h3 { font-size: 1.3rem; margin-bottom: 4px; }
+  .plan .tag { font-size: .9rem; opacity: .7; margin-bottom: 20px; }
+  .price { font-size: 2.3rem; font-weight: 800; letter-spacing: -.02em; }
+  .price small { font-size: .95rem; font-weight: 500; opacity: .7; }
+  .visits { margin: 14px 0 20px; padding: 10px 14px; border-radius: 10px; background: var(--soft); color: var(--primary); font-weight: 700; font-size: .95rem; }
+  .featured .visits { background: rgba(255,255,255,.14); color: #fff; }
+  .plan ul { list-style: none; margin-bottom: 24px; flex: 1; }
+  .plan li { padding: 8px 0 8px 26px; position: relative; border-bottom: 1px solid var(--line); font-size: .96rem; }
+  .featured li { border-color: rgba(255,255,255,.18); }
+  .plan li::before { content: "✓"; position: absolute; left: 0; font-weight: 800; color: var(--ok); }
+  .featured li::before { color: #8fe0b5; }
+  .plan .btn { text-align: center; }
+  .featured .btn { background: #fff; color: var(--primary); }
+  .promo { margin-top: 26px; background: var(--card); border: 1.5px dashed var(--accent); border-radius: var(--radius); padding: 18px 22px; font-size: .98rem; }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; background: var(--card); border-radius: var(--radius); border: 1px solid var(--line); }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  th, td { padding: 14px 16px; text-align: center; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  th:first-child, td:first-child { text-align: left; font-weight: 600; }
+  thead th { background: var(--primary); color: #fff; font-size: .9rem; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* Include / Exclude */
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
+  .box { background: var(--card); border-radius: var(--radius); padding: 26px; border: 1px solid var(--line); }
+  .box h3 { margin-bottom: 14px; font-size: 1.15rem; }
+  .box ul { list-style: none; }
+  .box li { padding: 7px 0 7px 26px; position: relative; font-size: .96rem; }
+  .box.yes li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 800; }
+  .box.no li::before { content: "✕"; position: absolute; left: 0; color: var(--no); font-weight: 800; }
+
+  /* Rules / FAQ */
+  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .rule { background: var(--card); border-radius: var(--radius); padding: 22px; border: 1px solid var(--line); }
+  .rule h3 { font-size: 1rem; margin-bottom: 6px; }
+  .rule p { font-size: .94rem; color: var(--muted); }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 10px; color: var(--muted); font-size: .96rem; }
+
+  /* CTA */
+  .cta { background: var(--primary); color: #fff; text-align: center; }
+  .cta h2 { margin-bottom: 14px; }
+  .cta p { opacity: .85; max-width: 520px; margin: 0 auto 28px; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  footer { text-align: center; padding: 26px 20px; font-size: .85rem; color: var(--muted); }
+
+  .fade { opacity: 0; transform: translateY(18px); animation: up .8s ease forwards; }
+  @keyframes up { to { opacity: 1; transform: none; } }
+
+  @media (max-width: 560px) {
+    section { padding: 48px 0; }
+    .btn-ghost { margin: 12px 0 0; }
+    .btn { display: block; text-align: center; }
+    .hero .btn { width: 100%; }
+  }
+  @media print { .btn { display: none; } .plan:hover { transform: none; box-shadow: none; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap fade">
+    <div class="brand">CEDETEC DIGITAL</div>
+    <h1>Tus redes sociales, siempre activas.</h1>
+    <p>Vamos a tu negocio, sacamos las fotos, grabamos los videos y manejamos Instagram, TikTok y Facebook por vos. Vos atendés a tus clientes, nosotros nos ocupamos de que te encuentren.</p>
+    <a class="btn btn-light" data-wa="Hola! Vi la propuesta de manejo de redes de CEDETEC Digital y quiero más información.">Consultar por WhatsApp</a>
+    <a class="btn btn-ghost" href="#paquetes">Ver paquetes</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Cómo funciona</div>
+    <h2>Simple, ordenado y sin vueltas</h2>
+    <p class="lead">Cada visita dura 1 hora. Lo que cambia entre paquetes es cuántas veces vamos al mes.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Visitamos tu negocio</h3><p>Una hora de fotos y videos de tus productos, tu local y tu trabajo diario.</p></div>
+      <div class="step"><div class="n">2</div><h3>Editamos y planificamos</h3><p>Armamos reels, fotos, textos y un calendario de contenido que vos aprobás.</p></div>
+      <div class="step"><div class="n">3</div><h3>Publicamos por vos</h3><p>Subimos todo a Instagram, TikTok y Facebook en los mejores horarios.</p></div>
+      <div class="step"><div class="n">4</div><h3>Te mostramos resultados</h3><p>Al final del mes recibís un reporte simple con alcance, seguidores y consultas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="paquetes" style="background:#e6e6e3;">
+  <div class="wrap">
+    <div class="eyebrow">Paquetes</div>
+    <h2>Elegí cuántas veces vamos por mes</h2>
+    <p class="lead">Todos los paquetes incluyen el manejo de <strong>todas tus redes</strong>: Instagram, TikTok y Facebook.</p>
+
+    <div class="plans">
+      <article class="plan">
+        <h3>Básico</h3>
+        <div class="tag">Para empezar a tener presencia</div>
+        <div class="price">$100.000 <small>/ mes</small></div>
+        <div class="visits">2 visitas al mes · 1 hora c/u</div>
+        <ul>
+          <li>8 publicaciones de feed</li>
+          <li>4 reels / TikToks</li>
+          <li>3 historias por semana</li>
+          <li>Textos y hashtags</li>
+          <li>Reporte mensual</li>
+        </ul>
+        <a class="btn btn-dark" data-wa="Hola! Me interesa el paquete Básico de manejo de redes.">Quiero el Básico</a>
+      </article>
+
+      <article class="plan featured">
+        <span class="badge">MÁS ELEGIDO</span>
+        <h3>Estándar</h3>
+        <div class="tag">Constancia semanal y crecimiento</div>
+        <div class="price">$150.000 <small>/ mes</small></div>
+        <div class="visits">4 visitas al mes · 1 hora c/u</div>
+        <ul>
+          <li>12 publicaciones de feed</li>
+          <li>8 reels / TikToks</li>
+          <li>5 historias por semana</li>
+          <li>Textos y hashtags</li>
+          <li>Calendario de contenido</li>
+          <li>Reporte mensual</li>
+        </ul>
+        <a class="btn" data-wa="Hola! Me interesa el paquete Estándar de manejo de redes.">Quiero el Estándar</a>
+      </article>
+
+      <article class="plan">
+        <h3>Premium</h3>
+        <div class="tag">Presencia total, todos los días</div>
+        <div class="price">$300.000 <small>/ mes</small></div>
+        <div class="visits">8 visitas al mes · 1 hora c/u</div>
+        <ul>
+          <li>16 publicaciones de feed</li>
+          <li>16 reels / TikToks</li>
+          <li><strong>Historias todos los días</strong></li>
+          <li>Textos y hashtags</li>
+          <li>Calendario de contenido</li>
+          <li>Reporte mensual detallado</li>
+        </ul>
+        <a class="btn btn-dark" data-wa="Hola! Me interesa el paquete Premium de manejo de redes.">Quiero el Premium</a>
+      </article>
+    </div>
+
+    <div class="promo">🎁 <strong>Descuento de bienvenida:</strong> 10% off en tu primer mes con cualquier paquete. Desde el segundo mes se aplica el precio normal.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Comparación</div>
+    <h2>Todo de un vistazo</h2>
+    <p class="lead">&nbsp;</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Básico</th><th>Estándar</th><th>Premium</th></tr></thead>
+        <tbody>
+          <tr><td>Visitas por mes (1 h c/u)</td><td>2</td><td>4</td><td>8</td></tr>
+          <tr><td>Redes incluidas</td><td>Todas</td><td>Todas</td><td>Todas</td></tr>
+          <tr><td>Publicaciones de feed</td><td>8</td><td>12</td><td>16</td></tr>
+          <tr><td>Reels / TikToks</td><td>4</td><td>8</td><td>16</td></tr>
+          <tr><td>Historias</td><td>3 por semana</td><td>5 por semana</td><td>Todos los días</td></tr>
+          <tr><td>Calendario de contenido</td><td>—</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Reporte mensual</td><td>Simple</td><td>Simple</td><td>Detallado</td></tr>
+          <tr><td><strong>Precio mensual</strong></td><td><strong>$100.000</strong></td><td><strong>$150.000</strong></td><td><strong>$300.000</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="background:#e6e6e3;">
+  <div class="wrap">
+    <div class="eyebrow">Alcance</div>
+    <h2>Qué incluye y qué no</h2>
+    <p class="lead">Preferimos que todo quede claro desde el principio.</p>
+    <div class="two">
+      <div class="box yes">
+        <h3>Incluido en todos los paquetes</h3>
+        <ul>
+          <li>Fotos y videos en tu negocio</li>
+          <li>Edición de reels y fotos</li>
+          <li>Redacción de textos y hashtags</li>
+          <li>Publicación y programación en todas las redes</li>
+          <li>Historias armadas con el material de las visitas</li>
+          <li>1 revisión por pieza de contenido</li>
+          <li>Reporte de resultados a fin de mes</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <h3>No incluido (se cotiza aparte)</h3>
+        <ul>
+          <li>Responder mensajes, comentarios y DMs</li>
+          <li>Publicidad paga (Meta Ads); la inversión en anuncios la abona el cliente</li>
+          <li>Eventos especiales, sesiones con modelos o producciones largas</li>
+          <li>Visitas extra fuera del paquete</li>
+          <li>Publicaciones en tiempo real o al instante</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Reglas claras</div>
+    <h2>Cómo trabajamos</h2>
+    <p class="lead">Sin letra chica y sin contratos largos.</p>
+    <div class="rules">
+      <div class="rule"><h3>💳 Pago adelantado</h3><p>El pago se realiza al inicio de cada mes, antes de la primera visita.</p></div>
+      <div class="rule"><h3>🔄 Sin permanencia</h3><p>Renovación mes a mes. Para darte de baja, avisás con 15 días de anticipación.</p></div>
+      <div class="rule"><h3>🗓️ Calendario aprobado</h3><p>Te enviamos el plan de contenido la semana previa para que lo apruebes.</p></div>
+      <div class="rule"><h3>✏️ Una revisión por pieza</h3><p>Si querés cambios, los hacemos una vez por contenido para mantener los tiempos.</p></div>
+      <div class="rule"><h3>🔑 Acceso a tus cuentas</h3><p>Necesitamos ser administradores de tus redes. Nunca te pedimos tu contraseña personal.</p></div>
+      <div class="rule"><h3>📣 Avisos con tiempo</h3><p>Promos y novedades, avisanos con al menos 48 horas para poder incluirlas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#e6e6e3;">
+  <div class="wrap">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <h2>Lo que más nos preguntan</h2>
+    <p class="lead">&nbsp;</p>
+    <details><summary>¿Con qué frecuencia se suben las historias?</summary><p>Depende del paquete: 3 por semana en el Básico, 5 por semana en el Estándar y todos los días en el Premium. Se arman con el material de las visitas y lo que nos mandes por WhatsApp.</p></details>
+    <details><summary>¿Qué pasa si no puedo recibirlos un día de visita?</summary><p>Reprogramamos sin cargo si avisás con 24 horas de anticipación. Las visitas deben usarse dentro del mes.</p></details>
+    <details><summary>¿Manejan también TikTok y Facebook?</summary><p>Sí. Todos los paquetes incluyen Instagram, TikTok y Facebook, sin costo extra por red.</p></details>
+    <details><summary>¿Pueden contestar los mensajes de mis clientes?</summary><p>Es un servicio opcional que se cotiza aparte. Consultanos y armamos un presupuesto según el volumen de mensajes.</p></details>
+    <details><summary>¿Tengo que tener las redes creadas?</summary><p>No. Si todavía no las tenés, las creamos y las configuramos con la identidad de tu negocio.</p></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>¿Empezamos con tu negocio?</h2>
+    <p>Escribinos y coordinamos la primera visita. Te respondemos el mismo día.</p>
+    <div class="contacts">
+      <a class="btn btn-light" data-wa="Hola! Quiero empezar con el manejo de redes de mi negocio.">💬 WhatsApp</a>
+      <a class="btn btn-ghost" data-ig style="margin:0;">📸 Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 CEDETEC Digital · Formosa, Argentina</footer>
+
+<script>
+  var WHATSAPP  = "5493704700739";
+  var INSTAGRAM = "cedetec.comm";
+
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.getAttribute("data-wa"));
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll("[data-ig]").forEach(function (a) {
+    a.href = "https://instagram.com/" + INSTAGRAM; a.target = "_blank"; a.rel = "noopener";
+  });
+</script>
+</body>
+</html>
